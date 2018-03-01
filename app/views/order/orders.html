@@ -1,0 +1,18 @@
+
+<h2>{{vm.customer.name}}'s orders</h2>
+<div class="form-group row">
+    <lavel class="col-sm-12 col-form-label">Filter:</lavel>
+    <div class="col-sm-10">
+        <input type="text" ng-model="vm.filterText" class="form-control"/>
+    </div>
+</div>
+<table class="table table-striped">
+    <tr>
+        <th>Product</th>
+        <th>Total</th>
+    </tr>
+    <tr ng-repeat="order in vm.customer.orders | filter: vm.filterText">
+        <td>{{order.product}}</td>
+        <td>{{order.total}}</td>
+    </tr>
+</table>                                                  

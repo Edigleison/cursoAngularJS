@@ -6,7 +6,7 @@
     CustomerController.$inject = ['CustomerService'];
     
     function CustomerController(CustomerService){
-        const vm= this;
+        const vm = this;
         vm.customers = [];
         init();
         
