@@ -3,8 +3,8 @@ var app = express();
 
 app.use(express.static(__dirname + '/'));
 
-app.get('/constumers', function (req, res) {
-    console.log('/constumers');
+app.get('/customers', function (req, res) {
+    console.log('/customers');
     var customers = [
             {
                 name: "John",

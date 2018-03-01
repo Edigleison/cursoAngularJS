@@ -9,7 +9,7 @@
     function CustomerService($http){
         var factory = {};
         factory.getCustomers = function(){
-            return $http.get('/constumers');
+            return $http.get('/customers');
         }
         
         return factory;

@@ -6,13 +6,14 @@
     CustomerController.$inject = ['CustomerService'];
     
     function CustomerController(CustomerService){
-        this.customers = [];
+        const vm= this;
+        vm.customers = [];
         init();
         
         function init(){
             CustomerService.getCustomers()
-                .then(function (customers){
-                    this.customers = customers;
+                .then(function (res){
+                    vm.customers = res.data;
                 });
         }
         
