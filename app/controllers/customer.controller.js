@@ -3,23 +3,19 @@
     
     angular.module("customer").controller('CustomerController', CustomerController);
     
-    CustomerController.$inject = [];
+    CustomerController.$inject = ['CustomerService'];
     
-    function CustomerController(){
-        this.customers = [
-            {
-                name: "John",
-                adress: {
-                    city: "New Yourk"    
-                }
-            },
-            {
-                name: "Dave",
-                adress: {
-                    city: "Los Angeles"    
-                }
-            }
-        ];
+    function CustomerController(CustomerService){
+        this.customers = [];
+        init();
+        
+        function init(){
+            CustomerService.getCustomers()
+                .then(function (customers){
+                    this.customers = customers;
+                });
+        }
+        
     }
     
     
